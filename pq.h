@@ -12,7 +12,7 @@ struct node {
 };
 
 // malloc a new node
-struct node *make_node(struct node *left, struct node *right, int k, int v);
+struct node *make_node(struct node *left, struct node *right, int k, char v);
 
 // struct contains the nodes in heaped order and the length of the heap
 // essentially a slice

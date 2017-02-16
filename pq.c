@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct node *make_node(struct node *left, struct node *right, int k, int v) {
+struct node *make_node(struct node *left, struct node *right, int k, char v) {
     struct node *t = (struct node *)malloc(sizeof(struct node));
     t->key = k;
     t->val = v;

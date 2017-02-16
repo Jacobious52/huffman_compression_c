@@ -10,9 +10,18 @@ int main(int argc, char **argv) {
         return 0;
     }
 
-    int n;
-    struct node *tree = huffman_encode_tree(argv[1], &n);
+    struct node *tree = huffman_encode_tree(argv[1]);
+    char **table = huffman_encode_table(tree);
+
+    FILE *file = fopen(argv[1], "r");
+    char c;
+    while ((c = fgetc(file)) != EOF) {
+        printf("%s", table[(int)c]);
+    }
+    printf("%s", table[TABLE_SIZE-1]);
+
     free_tree(tree);
+    free(table);
 
     return 0;
 }
